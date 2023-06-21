@@ -14,7 +14,7 @@ import io from 'socket.io-client';
 import { useSelector } from 'react-redux';
 import PostComment from './features/home/components/postComment';
 
-export const socket = io.connect('https://social-network-be-reopen.onrender.com');
+export const socket = io.connect('https://social-network-be-reopen.onrender.com/api');
 
 function App() {
     const { activePostId } = useSelector((state) => state.home);
