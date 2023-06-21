@@ -6,7 +6,7 @@ import {
   Favorite,
   ReplyRounded,
   ChatBubbleOutlineOutlined,
-} from "@material-ui/icons";
+} from "@mui/icons-material";
 import "./common.scss";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -113,7 +113,7 @@ const CommentItem = ({ CmtItem }) => {
     try {
       const action1 = getCommentsByPostID(activePostId);
       dispatch(action1);
-    } catch (error) {}
+    } catch (error) { }
   };
 
   let domNode1 = useCloseOutSideToClose(() => {

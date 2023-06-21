@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import IMAGES from '../../../assets/images/imageStore';
 import './newcomponent.scss';
-import { TagFacesOutlined } from '@material-ui/icons';
+import { TagFacesOutlined } from '@mui/icons-material';
 import Picker from 'emoji-picker-react';
 import { useSelector } from 'react-redux';
 

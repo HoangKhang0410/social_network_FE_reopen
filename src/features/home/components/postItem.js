@@ -18,7 +18,7 @@ import {
   AddCommentOutlined,
   Favorite,
   BookmarkBorderOutlined,
-} from "@material-ui/icons";
+} from "@mui/icons-material";
 import PostHeader from "./postHeader";
 import { format } from "timeago.js";
 import {
@@ -119,7 +119,7 @@ const PostItem = ({ postId, content }) => {
               return (
                 <Carousel.Item key={index}>
                   {contenItem.split(".")[contenItem.split(".").length - 1] ===
-                  "mp4" ? (
+                    "mp4" ? (
                     <video height="500" width="665" controls>
                       <source src={contenItem} type="video/mp4"></source>
                     </video>

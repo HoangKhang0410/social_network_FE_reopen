@@ -3,7 +3,7 @@ import { Col, Row, Spinner } from "react-bootstrap";
 import {
   InsertEmoticonOutlined,
   HighlightOffOutlined,
-} from "@material-ui/icons";
+} from "@mui/icons-material";
 import Picker from "emoji-picker-react";
 import {
   addNewComment,

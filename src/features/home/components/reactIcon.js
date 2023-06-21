@@ -4,7 +4,7 @@ import {
   AddCommentOutlined,
   Favorite,
   BookmarkBorderOutlined,
-} from "@material-ui/icons";
+} from "@mui/icons-material";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Col, Row } from "react-bootstrap";

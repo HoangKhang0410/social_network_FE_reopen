@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { ModeComment, Forum, Favorite, ReplyAll, CreateNewFolder } from '@material-ui/icons';
+import { ModeComment, Forum, Favorite, ReplyAll, CreateNewFolder } from '@mui/icons-material';
 import { format } from 'timeago.js';
 
 import './Header.scss';

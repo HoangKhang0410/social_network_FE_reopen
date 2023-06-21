@@ -1,6 +1,6 @@
 import React from 'react';
-import { AddAPhotoOutlined } from '@material-ui/icons';
-import { Close } from '@material-ui/icons';
+import { AddAPhotoOutlined } from '@mui/icons-material';
+import { Close } from '@mui/icons-material';
 import useImageUpload from '../../../hooks/useImageUpload';
 import useVideoUpload from '../../../hooks/useVideoUpload';
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Close } from "@material-ui/icons";
+import { Close } from "@mui/icons-material";
 import AccountItem from "./accountItem";
 import { useDispatch, useSelector } from "react-redux";
 import { HideAllLikesModal } from "../../homeSlice";

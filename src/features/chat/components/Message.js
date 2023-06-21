@@ -1,4 +1,4 @@
-import { DeleteOutline, Favorite, FavoriteBorder, Reply } from '@material-ui/icons';
+import { DeleteOutline, Favorite, FavoriteBorder, Reply } from '@mui/icons-material';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
@@ -66,9 +66,8 @@ const Message = ({ message, handleImagePopup, handleTymMessage, handleUnTymMessa
                 {message.isDeleted ? (
                     <p
                         id="bruh-bruh-lmao-lmao"
-                        className={`rightPanel__conversation__content__text ${
-                            message.sender?._id === currentUser._id ? 'mine' : ''
-                        }`}
+                        className={`rightPanel__conversation__content__text ${message.sender?._id === currentUser._id ? 'mine' : ''
+                            }`}
                     >
                         {message.sender.name} đã thu hồi tin nhắn
                     </p>
@@ -86,9 +85,8 @@ const Message = ({ message, handleImagePopup, handleTymMessage, handleUnTymMessa
                     </video>
                 ) : message.content.messType === 'post' ? (
                     <div
-                        className={`rightPanel__conversation__content__post ${
-                            message.sender?._id === currentUser._id ? 'mine' : ''
-                        }`}
+                        className={`rightPanel__conversation__content__post ${message.sender?._id === currentUser._id ? 'mine' : ''
+                            }`}
                         onClick={() => showPostDetail(post._id)}
                     >
                         <div className="rightPanel__conversation__content__post__header">
@@ -116,9 +114,8 @@ const Message = ({ message, handleImagePopup, handleTymMessage, handleUnTymMessa
                     </div>
                 ) : (
                     <p
-                        className={`rightPanel__conversation__content__text ${
-                            message.sender?._id === currentUser._id ? 'mine' : ''
-                        }`}
+                        className={`rightPanel__conversation__content__text ${message.sender?._id === currentUser._id ? 'mine' : ''
+                            }`}
                     >
                         {message.content.text.includes('http') ? (
                             <a href={message.content.text}>{message.content.text}</a>
@@ -131,9 +128,8 @@ const Message = ({ message, handleImagePopup, handleTymMessage, handleUnTymMessa
                 {!message.isDeleted &&
                     (message.tym.length > 1 ? (
                         <div
-                            className={`rightPanel__conversation__content__react multiple ${
-                                message.sender?._id === currentUser._id ? 'mine' : ''
-                            }`}
+                            className={`rightPanel__conversation__content__react multiple ${message.sender?._id === currentUser._id ? 'mine' : ''
+                                }`}
                         >
                             <Favorite
                                 htmlColor="red"
@@ -145,9 +141,8 @@ const Message = ({ message, handleImagePopup, handleTymMessage, handleUnTymMessa
                     ) : (
                         message.tym.length !== 0 && (
                             <div
-                                className={`rightPanel__conversation__content__react ${
-                                    message.sender?._id === currentUser._id ? 'mine' : ''
-                                }`}
+                                className={`rightPanel__conversation__content__react ${message.sender?._id === currentUser._id ? 'mine' : ''
+                                    }`}
                             >
                                 <Favorite
                                     htmlColor="red"
@@ -158,9 +153,8 @@ const Message = ({ message, handleImagePopup, handleTymMessage, handleUnTymMessa
                         )
                     ))}
                 <div
-                    className={`rightPanel__conversation__content__whoTymToolTip ${
-                        message.sender?._id === currentUser._id ? 'mine' : ''
-                    }`}
+                    className={`rightPanel__conversation__content__whoTymToolTip ${message.sender?._id === currentUser._id ? 'mine' : ''
+                        }`}
                 >
                     {currentConversation.members.map((member) => {
                         if (message.tym.includes(member._id)) {
@@ -171,9 +165,8 @@ const Message = ({ message, handleImagePopup, handleTymMessage, handleUnTymMessa
                 </div>
                 {!message.isDeleted && (
                     <div
-                        className={`rightPanel__conversation__content__options ${
-                            message.sender?._id === currentUser._id ? 'mine' : ''
-                        }`}
+                        className={`rightPanel__conversation__content__options ${message.sender?._id === currentUser._id ? 'mine' : ''
+                            }`}
                     >
                         {!message.tym.includes(currentUser._id) ? (
                             <FavoriteBorder onClick={() => handleTymMessage(message._id, currentUser._id)} />

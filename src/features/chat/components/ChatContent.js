@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFaceGrinWide, faImage, faHeart, faPaperPlane } from '@fortawesome/free-regular-svg-icons';
-import { InfoOutlined, Call, ArrowDownward } from '@material-ui/icons';
+import { InfoOutlined, Call, ArrowDownward } from '@mui/icons-material';
 import {
     createMessage,
     deleteMessage,
@@ -86,8 +86,8 @@ const ChatContent = ({ isOpenSetting, setIsOpenSetting, isShowPopup, setIsShowPo
         } else {
             if (
                 chatContentRef.current.scrollHeight -
-                    chatContentRef.current.scrollTop -
-                    chatContentRef.current.clientHeight >
+                chatContentRef.current.scrollTop -
+                chatContentRef.current.clientHeight >
                 300
             ) {
                 setShowScrollButton(true);
@@ -116,8 +116,8 @@ const ChatContent = ({ isOpenSetting, setIsOpenSetting, isShowPopup, setIsShowPo
             setData((prev) => [mess, ...prev]);
             if (
                 chatContentRef.current.scrollHeight -
-                    chatContentRef.current.scrollTop -
-                    chatContentRef.current.clientHeight <=
+                chatContentRef.current.scrollTop -
+                chatContentRef.current.clientHeight <=
                 300
             ) {
                 ref.current?.scrollIntoView({ behavior: 'smooth' });
@@ -359,14 +359,14 @@ const ChatContent = ({ isOpenSetting, setIsOpenSetting, isShowPopup, setIsShowPo
                                     conversations.find((conversation) => conversation._id === params.id)?.avatar
                                         ? conversations.find((conversation) => conversation._id === params.id)?.avatar
                                         : conversations.find((conversation) => conversation._id === params.id)?.members
-                                              .length === 2
-                                        ? conversations
-                                              .find((conversation) => conversation._id === params.id)
-                                              ?.members.find((item) => item._id !== currentUser._id).avatar
-                                        : conversations.find((conversation) => conversation._id === params.id)?.members
-                                              .length === 1
-                                        ? 'https://res.cloudinary.com/wjbucloud/image/upload/v1653282748/haha_axj617.jpg'
-                                        : 'https://res.cloudinary.com/wjbucloud/image/upload/v1651308420/j2team_girl_8_btpoep.jpg'
+                                            .length === 2
+                                            ? conversations
+                                                .find((conversation) => conversation._id === params.id)
+                                                ?.members.find((item) => item._id !== currentUser._id).avatar
+                                            : conversations.find((conversation) => conversation._id === params.id)?.members
+                                                .length === 1
+                                                ? 'https://res.cloudinary.com/wjbucloud/image/upload/v1653282748/haha_axj617.jpg'
+                                                : 'https://res.cloudinary.com/wjbucloud/image/upload/v1651308420/j2team_girl_8_btpoep.jpg'
                                 }
                                 alt="unsplash"
                             />
@@ -375,18 +375,18 @@ const ChatContent = ({ isOpenSetting, setIsOpenSetting, isShowPopup, setIsShowPo
                             {conversations.find((conversation) => conversation._id === params.id)?.name
                                 ? conversations.find((conversation) => conversation._id === params.id)?.name
                                 : conversations.find((conversation) => conversation._id === params.id)?.members
-                                      .length === 2
-                                ? conversations
-                                      .find((conversation) => conversation._id === params.id)
-                                      ?.members.find((item) => item._id !== currentUser._id).name
-                                : conversations.find((conversation) => conversation._id === params.id)?.members
-                                      .length === 1
-                                ? 'Không còn ai muốn trò chuyện với bạn nữa'
-                                : conversations
-                                      .find((conversation) => conversation._id === params.id)
-                                      ?.members.filter((item) => item._id !== currentUser._id)
-                                      .map((member) => member.name)
-                                      .join(', ')}
+                                    .length === 2
+                                    ? conversations
+                                        .find((conversation) => conversation._id === params.id)
+                                        ?.members.find((item) => item._id !== currentUser._id).name
+                                    : conversations.find((conversation) => conversation._id === params.id)?.members
+                                        .length === 1
+                                        ? 'Không còn ai muốn trò chuyện với bạn nữa'
+                                        : conversations
+                                            .find((conversation) => conversation._id === params.id)
+                                            ?.members.filter((item) => item._id !== currentUser._id)
+                                            .map((member) => member.name)
+                                            .join(', ')}
                         </h6>
                     </div>
                     <div className="rightPanel__title__call">

@@ -14,7 +14,7 @@ import {
     Favorite,
     PersonAdd,
     Close,
-} from '@material-ui/icons';
+} from '@mui/icons-material';
 import IMAGES from '../../assets/images/imageStore';
 import { useNavigate, NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';

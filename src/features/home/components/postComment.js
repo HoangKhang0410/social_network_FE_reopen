@@ -17,7 +17,7 @@ import ListComment from './ListComment';
 import AlllikesPopup from './commons/allLikesPopup';
 import CommentSkeleton from '../../../shareComponents/skeletonLoading/CommentSkeleton';
 import { format } from 'timeago.js';
-import { BookmarkBorderOutlined, Favorite, FavoriteBorderOutlined, SendOutlined } from '@material-ui/icons';
+import { BookmarkBorderOutlined, Favorite, FavoriteBorderOutlined, SendOutlined } from '@mui/icons-material';
 import { socket } from '../../../App';
 import MessagePopup from '../../chat/components/MessagePopup';
 

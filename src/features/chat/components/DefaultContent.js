@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SendOutlined } from '@material-ui/icons';
+import { SendOutlined } from '@mui/icons-material';
 import './Chat.scss';
 import { Button } from 'react-bootstrap';
 import MessagePopup from './MessagePopup';

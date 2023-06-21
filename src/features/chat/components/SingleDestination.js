@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CheckCircle } from '@material-ui/icons';
+import { CheckCircle } from '@mui/icons-material';
 import { useDispatch, useSelector } from 'react-redux';
 import { createTag, deleteTag } from '../ChatSlice';
 const SingleDestination = ({ follow, forRenderSearch = false, isForward = false }) => {
@@ -16,13 +16,13 @@ const SingleDestination = ({ follow, forRenderSearch = false, isForward = false 
             const newName = follow?.name
                 ? follow?.name
                 : follow?.members.length === 2
-                ? follow?.members.find((item) => item._id !== currentUser._id).name
-                : follow?.members.length === 1
-                ? 'Không còn ai muốn trò chuyện với bạn nữa'
-                : follow?.members
-                      .filter((item) => item._id !== currentUser._id)
-                      .map((member) => member.name)
-                      .join(', ');
+                    ? follow?.members.find((item) => item._id !== currentUser._id).name
+                    : follow?.members.length === 1
+                        ? 'Không còn ai muốn trò chuyện với bạn nữa'
+                        : follow?.members
+                            .filter((item) => item._id !== currentUser._id)
+                            .map((member) => member.name)
+                            .join(', ');
             dispatch(createTag({ name: newName, ...others }));
         }
     };
@@ -54,15 +54,14 @@ const SingleDestination = ({ follow, forRenderSearch = false, isForward = false 
                     <img src={follow.avatar} alt="avatar_user" />
                 ) : (
                     <img
-                        src={`${
-                            follow?.avatar
+                        src={`${follow?.avatar
                                 ? follow?.avatar
                                 : follow?.members.length === 2
-                                ? follow?.members.find((item) => item._id !== currentUser._id).avatar
-                                : follow?.members.length === 1
-                                ? 'https://res.cloudinary.com/wjbucloud/image/upload/v1653282748/haha_axj617.jpg'
-                                : 'https://res.cloudinary.com/wjbucloud/image/upload/v1651308420/j2team_girl_8_btpoep.jpg'
-                        }`}
+                                    ? follow?.members.find((item) => item._id !== currentUser._id).avatar
+                                    : follow?.members.length === 1
+                                        ? 'https://res.cloudinary.com/wjbucloud/image/upload/v1653282748/haha_axj617.jpg'
+                                        : 'https://res.cloudinary.com/wjbucloud/image/upload/v1651308420/j2team_girl_8_btpoep.jpg'
+                            }`}
                         alt="unsplash"
                     />
                 )}
@@ -75,13 +74,13 @@ const SingleDestination = ({ follow, forRenderSearch = false, isForward = false 
                         {follow?.name
                             ? follow?.name
                             : follow?.members.length === 2
-                            ? follow?.members.find((item) => item._id !== currentUser._id).name
-                            : follow?.members.length === 1
-                            ? 'Không còn ai muốn trò chuyện với bạn nữa'
-                            : follow?.members
-                                  .filter((item) => item._id !== currentUser._id)
-                                  .map((member) => member.name)
-                                  .join(', ')}
+                                ? follow?.members.find((item) => item._id !== currentUser._id).name
+                                : follow?.members.length === 1
+                                    ? 'Không còn ai muốn trò chuyện với bạn nữa'
+                                    : follow?.members
+                                        .filter((item) => item._id !== currentUser._id)
+                                        .map((member) => member.name)
+                                        .join(', ')}
                     </p>
                 )}
                 <p>{follow.email}</p>

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ShowReportModal, HideDetailEdit, deletePost, HideDetailReducer } from '../homeSlice';
 import { addActiveId, getPostsByUserId } from '../../user/profileSlice';
 import { useNavigate, Link } from 'react-router-dom';
-import { DeleteForever, BorderColor } from '@material-ui/icons';
+import { DeleteForever, BorderColor } from '@mui/icons-material';
 const PostHeader = ({ postId, postUser }) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Close } from '@material-ui/icons';
+import { Close } from '@mui/icons-material';
 import { Col, Container, Row } from 'react-bootstrap';
 import SingleTag from './SingleTag';
 import SingleDestination from './SingleDestination';
@@ -130,9 +130,8 @@ const MessagePopup = ({ setIsShowPopup, type = 'create', listUserId = [], setIsO
                         <>
                             <h5>New Message</h5>
                             <button
-                                className={`messagePopup__titleContainer__button ${
-                                    tags.length === 0 ? 'disabled' : ''
-                                }`}
+                                className={`messagePopup__titleContainer__button ${tags.length === 0 ? 'disabled' : ''
+                                    }`}
                                 onClick={handleClick}
                             >
                                 Next
@@ -142,9 +141,8 @@ const MessagePopup = ({ setIsShowPopup, type = 'create', listUserId = [], setIsO
                         <>
                             <h5>Add People</h5>
                             <button
-                                className={`messagePopup__titleContainer__button ${
-                                    tags.length === 0 ? 'disabled' : ''
-                                }`}
+                                className={`messagePopup__titleContainer__button ${tags.length === 0 ? 'disabled' : ''
+                                    }`}
                                 onClick={handleAdd}
                             >
                                 Next
@@ -154,9 +152,8 @@ const MessagePopup = ({ setIsShowPopup, type = 'create', listUserId = [], setIsO
                         <>
                             <h5>Forward Message</h5>
                             <button
-                                className={`messagePopup__titleContainer__button ${
-                                    tags.length === 0 ? 'disabled' : ''
-                                }`}
+                                className={`messagePopup__titleContainer__button ${tags.length === 0 ? 'disabled' : ''
+                                    }`}
                                 onClick={handleForward}
                             >
                                 Next
@@ -174,8 +171,8 @@ const MessagePopup = ({ setIsShowPopup, type = 'create', listUserId = [], setIsO
                                 {tags.lenght === 0
                                     ? ''
                                     : tags.map((tag, index) => {
-                                          return <SingleTag key={index} tag={tag} />;
-                                      })}
+                                        return <SingleTag key={index} tag={tag} />;
+                                    })}
                             </Row>
                             <Row className="messagePopup__destinations__input">
                                 <input
@@ -193,39 +190,39 @@ const MessagePopup = ({ setIsShowPopup, type = 'create', listUserId = [], setIsO
                     {type === 'create'
                         ? searchValue === ''
                             ? userContact.map((follow, index) => {
-                                  return <SingleDestination follow={follow} key={index} />;
-                              })
+                                return <SingleDestination follow={follow} key={index} />;
+                            })
                             : bruh.map((user, index) => {
-                                  return <SingleDestination follow={user} key={index} />;
-                              })
+                                return <SingleDestination follow={user} key={index} />;
+                            })
                         : type === 'add'
-                        ? searchValue === ''
-                            ? userContact
-                                  .filter((item) => {
-                                      if (!listUserId?.includes(item._id)) {
-                                          return item;
-                                      }
-                                  })
-                                  .map((follow, index) => {
-                                      return <SingleDestination follow={follow} key={index} />;
-                                  })
-                            : bruh
-                                  .filter((item) => {
-                                      return !listUserId?.includes(item._id);
-                                  })
-                                  .map((user, index) => {
-                                      return <SingleDestination follow={user} key={index} />;
-                                  })
-                        : type === 'forward'
-                        ? conversations
-                              .filter((con) => {
-                                  const memberIds = con.members.map((mem) => mem._id);
-                                  return memberIds.includes(currentUser._id);
-                              })
-                              .map((con, index) => {
-                                  return <SingleDestination follow={con} key={index} isForward={true} />;
-                              })
-                        : ''}
+                            ? searchValue === ''
+                                ? userContact
+                                    .filter((item) => {
+                                        if (!listUserId?.includes(item._id)) {
+                                            return item;
+                                        }
+                                    })
+                                    .map((follow, index) => {
+                                        return <SingleDestination follow={follow} key={index} />;
+                                    })
+                                : bruh
+                                    .filter((item) => {
+                                        return !listUserId?.includes(item._id);
+                                    })
+                                    .map((user, index) => {
+                                        return <SingleDestination follow={user} key={index} />;
+                                    })
+                            : type === 'forward'
+                                ? conversations
+                                    .filter((con) => {
+                                        const memberIds = con.members.map((mem) => mem._id);
+                                        return memberIds.includes(currentUser._id);
+                                    })
+                                    .map((con, index) => {
+                                        return <SingleDestination follow={con} key={index} isForward={true} />;
+                                    })
+                                : ''}
                 </div>
             </div>
         </>

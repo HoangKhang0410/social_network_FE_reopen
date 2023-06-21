@@ -1,4 +1,4 @@
-import { Info } from '@material-ui/icons';
+import { Info } from '@mui/icons-material';
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -117,16 +117,15 @@ const ChatSetting = ({ setIsOpenSetting, currentConversation }) => {
                     <div className="rightPanel__changeGroupPhoto">
                         <div className="rightPanel__changeGroupPhoto__image">
                             <img
-                                src={`${
-                                    currentConversation?.avatar
+                                src={`${currentConversation?.avatar
                                         ? currentConversation?.avatar
                                         : currentConversation?.members.length === 2
-                                        ? currentConversation?.members.find((item) => item._id !== currentUser._id)
-                                              .avatar
-                                        : currentConversation?.members.length === 1
-                                        ? 'https://res.cloudinary.com/wjbucloud/image/upload/v1653282748/haha_axj617.jpg'
-                                        : 'https://res.cloudinary.com/wjbucloud/image/upload/v1651308420/j2team_girl_8_btpoep.jpg'
-                                }`}
+                                            ? currentConversation?.members.find((item) => item._id !== currentUser._id)
+                                                .avatar
+                                            : currentConversation?.members.length === 1
+                                                ? 'https://res.cloudinary.com/wjbucloud/image/upload/v1653282748/haha_axj617.jpg'
+                                                : 'https://res.cloudinary.com/wjbucloud/image/upload/v1651308420/j2team_girl_8_btpoep.jpg'
+                                    }`}
                                 alt="unsplash"
                             />
                         </div>

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Container, Row, Col } from 'react-bootstrap';
 import { getCommentsByPostID, getPostById, ShowDetail } from '../../../home/homeSlice';
 
-import { Favorite, ChatBubble } from '@material-ui/icons';
+import { Favorite, ChatBubble } from '@mui/icons-material';
 
 import PostComment from '../../../home/components/postComment';
 
